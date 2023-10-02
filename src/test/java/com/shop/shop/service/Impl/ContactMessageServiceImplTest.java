@@ -1,13 +1,10 @@
 package com.shop.shop.service.Impl;
 
-import com.shop.shop.dao.ContactMessageDao;
-import com.shop.shop.dto.ContactMessageDto;
-import com.shop.shop.repository.ContactMessageRepository;
-import com.shop.shop.service.ContactMessageService;
-import com.shop.shop.service.Impl.ContactMessageServiceImpl;
+import com.shop.dao.ContactMessageDao;
+import com.shop.dto.ContactMessageDto;
+import com.shop.repository.ContactMessageRepository;
+import com.shop.service.ContactMessageService;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,13 +1,14 @@
 package com.shop.shop.service.Impl;
 
-import com.shop.shop.dao.OrderDAO;
-import com.shop.shop.dto.OrderDTO;
-import com.shop.shop.model.Order;
-import com.shop.shop.model.OrderProductInformation;
-import com.shop.shop.model.Product;
-import com.shop.shop.repository.ProductCountRepository;
-import com.shop.shop.service.BasketService;
-import com.shop.shop.service.OrderService;
+import com.shop.dao.OrderDAO;
+import com.shop.dto.OrderDTO;
+import com.shop.model.Order;
+import com.shop.model.OrderProductInformation;
+import com.shop.model.Product;
+import com.shop.repository.ProductCountRepository;
+import com.shop.service.BasketService;
+import com.shop.service.Impl.OrderServiceImpl;
+import com.shop.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

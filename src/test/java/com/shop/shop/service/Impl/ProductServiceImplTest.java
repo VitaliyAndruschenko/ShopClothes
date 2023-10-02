@@ -1,9 +1,9 @@
 package com.shop.shop.service.Impl;
 
-import com.shop.shop.dao.ProductDAO;
-import com.shop.shop.dto.ProductDTO;
-import com.shop.shop.model.Product;
-import com.shop.shop.service.ProductService;
+import com.shop.dao.ProductDAO;
+import com.shop.dto.ProductDTO;
+import com.shop.model.Product;
+import com.shop.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

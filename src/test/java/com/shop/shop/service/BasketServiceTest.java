@@ -1,17 +1,11 @@
 package com.shop.shop.service;
 
-import com.shop.shop.model.Product;
-import com.shop.shop.model.User;
-import org.junit.jupiter.api.BeforeEach;
+import com.shop.model.Product;
+import com.shop.service.BasketService;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
