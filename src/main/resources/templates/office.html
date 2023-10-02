@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:replace="~{header__fragments.html :: header}"></header>
+<form th:action="@{/addProduct}" method="post" id="jewelryForm" enctype="multipart/form-data" class="office__form">
+  <div><label> Name product : <input  type="text" name="productName"/> </label></div>
+  <div><label> Tagline product : <input  type="text" name="tagline"/> </label></div>
+  <div><label> Price product : <input  type="number" name="price"/> </label></div>
+  <div><label> Description <input  type="text" name="description"/> </label></div>
+  <td><form:label path="file">Select a file to upload</form:label></td>
+  <td><input type="file" name="photoFileName"/></td>
+  <div ><input type="submit" value="to create"/></div>
+</form>
+<table>
+  <tr>
+    <th>Post NAME</th>
+  </tr>
+  <tr th:each="p: ${product}" >
+    <td th:text="${p.productName}"></td>
+    <td th:text="${p.tagline}"></td>
+    <td th:text="${p.price}"></td>
+    <td th:text="${p.description}"></td>
+    <td><img th:src="@{office/{file}(file = ${p.photoFileName})}" alt="" style="width: 150px"></td>
+  </tr>
+</table>
+<form th:action="@{/deleteProduct}" method="post" enctype="multipart/form-data" class="office__form">
+  <div><label> Name product : <input  type="text" name="productName"/> </label></div>
+  <div ><input type="submit" value="to delete"/></div>
+</form>
+<form th:action="@{/findProduct}" method="get" enctype="multipart/form-data" class="office__form">
+  <div><label> Name product : <input  type="text" name="productName"/> </label></div>
+  <div ><input type="submit" value="to find"/></div>
+</form>
+<table>
+  <tr>
+    <th>Find NAME</th>
+  </tr>
+  <tr th:each="f : ${production}" >
+    <td th:text="${f.productName}"></td>
+    <td th:text="${f.tagline}"></td>
+    <td th:text="${f.price}"></td>
+    <td th:text="${f.description}"></td>
+    <td><img th:src="@{office/{file}(file = ${f.photoFileName})}" alt="" style="width: 150px"></td>
+  </tr>
+</table>
+<form th:action="@{/updateProduct}" method="post" enctype="multipart/form-data" class="office__form">
+  <div><label> Name product to update : <input  type="number" name="id"/> </label></div>
+  <div><label> Name product : <input  type="text" name="productName"/> </label></div>
+  <div><label> Tagline product : <input  type="text" name="tagline"/> </label></div>
+  <div><label> Price product : <input  type="number" name="price"/> </label></div>
+  <div><label> Description <input  type="text" name="description"/> </label></div>
+  <td><form:label path="file">Select a file to upload</form:label></td>
+  <td><input type="file" name="photoFileName"/></td>
+  <div ><input type="submit" value="to update"/></div>
+</form>
+<form th:action="@{/logout}" method="post">
+  <input type="submit" value="Sign Out"/>
+</form>
+<footer th:replace="~{footer__fragments :: footer}"></footer>
+</body>
+</html>

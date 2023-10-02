@@ -1,0 +1,152 @@
+.bascket__card {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.bascket__card__box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.bascket__card__box:hover {
+    box-shadow: 1px 2px 35px 0px rgba(0, 0, 255, .2);
+    transform: scale(1.1);
+    transition: box-shadow transform 0.3s ease-in-out;
+}
+
+.bascket__card__header__container {
+    display: flex;
+}
+
+.bascket__card__container {
+    display: flex;
+    height: 150px;
+    padding: 0;
+}
+
+.bascket__card__img {
+    height: 150px;
+    width: 150px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.basked__card__btn {
+    border:none;
+    background-color: white;
+}
+
+.cross__svg {
+    height: 15px;
+    width: 15px;
+    fill: black;
+}
+
+.cross__svg:hover {
+    cursor: pointer;
+    fill: var(--primary-color);
+    transition: 0.3s ease-in-out;
+}
+
+.bascket__card__description__container {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    width: 100%;
+    position: relative;
+
+    border-right: 1px solid #293133;
+    border-bottom: 1px solid #293133;
+    border-top: 0.5px solid #293133;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.bascket__card__header {
+    width: 95%;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.bascket__card__tagline {
+    font-size: 15px;
+}
+
+.bascket__card__description {
+    font-size: 11px;
+}
+
+.bascket__card__price {
+    width: 50%;
+    text-align: end;
+    margin-right: 17px;
+}
+
+.bascket__card__count {
+    width: 50%;
+}
+
+.form__input__box {
+    margin-bottom: 20px;
+}
+
+.order__form__container {
+    text-align: center;
+}
+
+.form__input__input {
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 35px;
+    padding: 5px;
+    transition: border 0.3s ease-in-out;
+}
+
+.form__input__input:hover {
+    cursor:pointer;
+}
+
+.form__input__input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+    transition: border 0.3s ease-in-out;
+}
+
+.order__form__container {
+    padding-bottom: 15px;
+}
+
+.order__container__btn {
+    padding: 6px;
+    border: none;
+    width: 30%;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.order__container__btn:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+}
+
+.count__price__container {
+    display: flex;
+}
+
+.order__totalPrice {
+    display: flex;
+    justify-content: center;
+}
+
+.order__totalPrice__one {
+    color: black;
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+}
+
+.order__totalPrice__two {
+    color: var(--primary-color);;
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+}

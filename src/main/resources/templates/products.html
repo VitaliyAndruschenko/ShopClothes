@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Tooplate's Little Fashion - Products</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/slick.css"/>
+
+        <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+<!--
+
+Tooplate 2127 Little Fashion
+
+https://www.tooplate.com/view/2127-little-fashion
+
+-->
+    </head>
+    
+    <body>
+
+        <section class="preloader">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
+            </div>
+        </section>
+    
+        <main>
+
+            <header th:replace="~{header__fragments.html :: header}"></header>
+
+            <section class="site-header section-padding d-flex justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-10 col-12">
+                            <h1>
+                                <span class="d-block text-primary">Choose your</span>
+                                <span class="d-block text-dark">favorite stuffs</span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="products section-padding">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-12">
+                            <h2 class="mb-5">New Arrivals</h2>
+                        </div>
+
+                        <div th:each="p : ${product}" class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                                <a th:href="'/product/'+${p.id}">
+                                    <img th:src="@{office/{file}(file = ${p.photoFileName})}" src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="product__image__photo product-image" alt="">
+                                </a>
+
+                                <div class="product-top d-flex">
+                                    <span class="product-alert me-auto">New Arrival</span>
+
+                                    <a href="#" class="bi-heart-fill product-icon"></a>
+                                </div>
+
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 th:text="${p.productName}" class="product-title mb-0">
+                                            <a href="product-detail.html" class="product-title-link">Tree pot</a>
+                                        </h5>
+
+                                        <p th:text="${p.tagline}" class="product-p">Original package design from house</p>
+                                    </div>
+
+                                    <small th:text="${p.price}" class="product-price text-muted ms-auto">$25</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row page_num_container">
+                            <div class="col text-right">
+                                <ul class="page_nums">
+                                    <li class="active page_nums_li" th:classappend="${product.number eq 0}?'disabled':''">
+                                        <a href="#" th:href="'products?page=' + ${product.number - 1}"><</a>
+                                    </li>
+                                    <li th:classappend="${product.number + 1 ge product.totalPages}?'disabled':''">
+                                        <a href="#" th:href="'products?page=' + ${product.number + 1}" >></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <h2 class="mb-5">Popular</h2>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                                <a href="product-detail.html">
+                                    <img src="images/product/team-fredi-8HRKoay8VJE-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                </a>
+
+                                <div class="product-top d-flex">
+                                    <span class="product-alert">Trending</span>
+
+                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+                                </div>
+
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 class="product-title mb-0">
+                                            <a href="product-detail.html" class="product-title-link">Package</a>
+                                        </h5>
+
+                                        <p class="product-p">Original package design from house</p>
+                                    </div>
+
+                                    <small class="product-price text-muted ms-auto">$50</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                                <a href="product-detail.html">
+                                    <img src="images/product/quokkabottles-kFc1_G1GvKA-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                </a>
+
+                                <div class="product-top d-flex">
+                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+                                </div>
+
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 class="product-title mb-0">
+                                            <a href="product-detail.html" class="product-title-link">Bottle</a>
+                                        </h5>
+
+                                        <p class="product-p">Package design</p>
+                                    </div>
+
+                                    <small class="product-price text-muted ms-auto">$100</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                                <a href="product-detail.html">
+                                    <img src="images/product/anis-m-WnVrO-DvxcE-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                </a>
+
+                                <div class="product-top d-flex">
+                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+                                </div>
+
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 class="product-title mb-0">
+                                            <a href="product-detail.html" class="product-title-link">Medicine</a>
+                                        </h5>
+
+                                        <p class="product-p">Original design from house</p>
+                                    </div>
+
+                                    <small class="product-price text-muted ms-auto">$200</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer th:replace="~{footer__fragments :: footer}"></footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/Headroom.js"></script>
+        <script src="js/jQuery.headroom.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>

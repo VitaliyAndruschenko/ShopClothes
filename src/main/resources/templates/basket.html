@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tooplate's Little Fashion</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/slick.css"/>
+
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+    <link href="css/basket.css" rel="stylesheet">
+</head>
+<section class="preloader">
+    <div class="spinner">
+        <span class="sk-inner-circle"></span>
+    </div>
+</section>
+
+<main>
+
+    <header th:replace="~{header__fragments.html :: header}"></header>
+
+    <section class="site-header section-padding d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-10 col-12">
+                    <h1>
+                        <span class="d-block text-primary">Your shopping cart</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bascket__card">
+        <div class="container">
+            <div th:each="p : ${products}" class="row bascket__card__box">
+                <div class="bascket__card__container">
+                    <div class="bascket__card__photo">
+                        <img class="bascket__card__img" th:src="@{office/{file}(file = ${p.photoFileName})}">
+                    </div>
+                    <div class="bascket__card__description__container">
+                        <div class="bascket__card__header__container">
+                            <h3 th:text="${p.productName}" class="bascket__card__header">Header</h3>
+                            <form method="post" th:action="@{/delete/{id}(id = ${p.getId()})}">
+                                <button type="submit" class="basked__card__btn">
+                                    <svg class="cross__svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_614_376)">
+                                            <path d="M24.5324 23.0749L9.35319 7.89567C8.85852 7.401 8.05652 7.401 7.56185 7.89567L7.46757 7.98995C6.97291 8.48461 6.97291 9.28662 7.46757 9.78129L22.6468 24.9605C23.1415 25.4552 23.9435 25.4552 24.4381 24.9605L24.5324 24.8662C25.0271 24.3716 25.0271 23.5696 24.5324 23.0749Z" fill=""/>
+                                            <path d="M22.6469 7.92511L7.46769 23.1043C6.97303 23.599 6.97303 24.401 7.46769 24.8957L7.56197 24.9899C8.05663 25.4846 8.85864 25.4846 9.35331 24.9899L24.5325 9.81072C25.0272 9.31606 25.0272 8.51405 24.5325 8.01939L24.4383 7.92511C23.9436 7.43044 23.1416 7.43044 22.6469 7.92511Z" fill=""/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_614_376">
+                                                <rect width="32" height="32" fill=""/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                        <p th:text="${p.tagline}" class="bascket__card__tagline">tagline</p>
+                        <p th:text="${p.description}" class="bascket__card__description">description</p>
+                        <div class="count__price__container">
+                            <p th:text="${countProduct} + ${p.countInBasket}" class="bascket__card__count"></p>
+                            <p th:text="${p.price}" class="bascket__card__price">25</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="order__form">
+        <div class="container">
+            <div class="order__form__container">
+                <div class="order__totalPrice">
+                    <h3 class="order__totalPrice__one">Total </h3>
+                    <h3 class="order__totalPrice__two" th:text="${totalPrice}"></h3>
+                </div>
+                <form th:action="@{/addOrder}" method="post" class="order__container">
+                    <div class="form__input__box">
+                        <input class="form__input__input" type="email" name="email" placeholder="Email">
+                        <input class="form__input__input" id="phone" type="text" name="phone">
+                    </div>
+                    <button type="submit" class="order__container__btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <footer th:replace="~{footer__fragments :: footer}"></footer>
+    <!-- JAVASCRIPT FILES -->
+    <script src="https://unpkg.com/imask"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/Headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/custom.js"></script>
+</html>

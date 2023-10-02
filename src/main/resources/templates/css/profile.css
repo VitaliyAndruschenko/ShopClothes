@@ -1,0 +1,124 @@
+.profile {
+	margin-top: 9%;
+	margin-bottom: 5%;
+}
+.profile__container__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 8px solid white;
+}
+
+.profile__container__userPhoto {
+    width: 137px;
+}
+
+.profile__container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 60px;
+    border-radius: 20px;
+    background-color: #CCCCFF;
+}
+
+.input-file {
+	position: relative;
+	display: inline-block;
+}
+.input-file-btn {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+	font-size: 14px;
+	vertical-align: middle;
+	color: rgb(255 255 255);
+	text-align: center;
+	border-radius: 4px;
+	background-color: black;
+	line-height: 22px;
+	height: 40px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+	transition: background-color 0.2s;
+}
+.input-file-text {
+	padding: 0 10px;
+	line-height: 40px;
+	display: inline-block;
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
+/* Focus */
+.input-file input[type=file]:focus + .input-file-btn {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Hover/Active */
+.input-file:hover .input-file-btn {
+	background-color: var(--primary-color);
+}
+.input-file:active .input-file-btn {
+	background-color: var(--primary-color);
+}
+
+/* Disabled */
+.input-file input[type=file]:disabled + .input-file-btn {
+	background-color: #eee;
+}
+
+.profile__changed__form {
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+.profile__container__information {
+    border-right: 1px solid black;
+}
+
+.profile__changed__iput {
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.profile__changed__iput:focus {
+    outline: none;
+}
+
+.profile__changed__iput__last {
+    height: 120px;
+}
+
+.profile__label {
+    text-align: left;
+}
+
+.profile__changed__label {
+    display: grid;
+    margin-bottom: 10px;
+}
+
+.profile__changed__btn {
+    width: 32%;
+    font-size: 14px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.profile__changed__btn:hover {
+    background-color: var(--primary-color);
+    border: none;
+}

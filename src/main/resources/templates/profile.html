@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tooplate's Little Fashion</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/profile.css"/>
+
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+</head>
+<body>
+    <section class="preloader">
+        <div class="spinner">
+            <span class="sk-inner-circle"></span>
+        </div>
+    </section>
+    <section class="profile">
+        <div class="container">
+            <div class="row col-lg-12 col-xl-12 profile__container">
+                <div class="col-lg-4 col-xl-4 col-md-4 profile__container__information">
+                    <h3 class="profile__container__descr">Profile</h3>
+                    <p th:text="${cookie}"></p>
+                    <p th:text="${user}"></p>
+                    <img class="profile__container__img" src="product/moda.jpg">
+                    <h1 class="profile__container__header">Name</h1>
+                    <p class="profile__container__city">Russia</p>
+                    <p class="profile__container__dateRegistration">20.20.2020</p>
+                    <h2 class="profile__container__usename">Username</h2> 
+                    <form method="post" enctype="multipart/form-data">
+                        <label class="input-file">
+                               <input type="file" name="file">
+                                <span class="input-file-btn">Выберите файл</span>           
+                               <span class="input-file-text">Максимум 10мб</span>
+                         </label>
+                    </form>
+                    <p class="profile__container__about">Information about User</p>
+                </div>
+                <div class="col-lx-8 col-md-8 col-lg8 profile__changed__container">
+                    <form action="" class="profile__changed__form" method="post">
+                        <div class="col-lg-8 col-md-8 col-xl-8 profile__changed__label">
+                            <label class="profile__label">First Name</label>
+                            <input class="profile__changed__iput" placeholder="First Name">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-xl-8 profile__changed__label">
+                            <label class="profile__label">Last Name</label>
+                            <input class="profile__changed__iput" placeholder="Last Name">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-xl-8 profile__changed__label"> 
+                            <label class="profile__label">Cuntry</label>
+                            <input class="profile__changed__iput">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-xl-8 profile__changed__label">
+                            <label class="profile__label">City</label>
+                            <input class="profile__changed__iput">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-xl-8 profile__changed__label">
+                            <label class="profile__label">Anout Me</label>
+                            <input class="profile__changed__iput profile__changed__iput__last">
+                        </div>
+                        <button type="submit" class="profile__changed__btn">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <main>
+
+<header th:replace="~{header__fragments.html :: header}"></header>
+
+</main>
+<footer th:replace="~{footer__fragments :: footer}"></footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/Headroom.js"></script>
+        <script src="js/jQuery.headroom.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/custom.js"></script>
+
+</body>
+</html>
